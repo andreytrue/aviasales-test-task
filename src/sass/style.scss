@@ -1,0 +1,32 @@
+// Imports
+
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./blocks/visually-hidden.scss";
+@import "./blocks/transitions.scss";
+@import "./blocks/tickets.scss";
+@import "./blocks/item.scss";
+@import "./blocks/show-more.scss";
+
+.page__body {
+  display: grid;
+  grid-template-rows: auto auto;
+  background-color: $main-background-gray;
+}
+
+.page__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 31px;
+}
+
+.page__main {
+  display: grid;
+  grid-template-columns: 232px 502px;
+  justify-content: center;
+  grid-template-rows: auto auto;
+  column-gap: 20px;
+  font-family: 'Open Sans', sans-serif;
+}

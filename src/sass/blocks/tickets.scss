@@ -1,0 +1,59 @@
+.tickets__filter {  
+  background-color: $white;
+  border-radius: 5px;
+}
+
+.tickets__filter-wrapper {
+  display: grid;
+  grid-template-columns: 168px 168px 168px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.tickets__filter-wrapper {
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 0 -2px;
+}
+
+.tickets__filter-label {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.6px;
+  padding: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid #DFE5EC;
+}
+
+.tickets__filter-label + .tickets__filter-label {
+  margin: -1px 0 -1px 0px;
+}
+
+.tickets__filter-input:checked + .tickets__filter-label {
+  background-color: $branded-blue;
+  color: $white;
+  border: 1px solid $branded-blue;
+}
+
+.tickets__filter-input + .tickets__filter-label:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.tickets__filter-input + .tickets__filter-label:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.tickets__list {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
