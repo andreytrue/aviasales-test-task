@@ -1,15 +1,14 @@
+import {createAction} from '@reduxjs/toolkit';
+
 export const ActionType = {
-  SEARCH_TICKETS: 'tickets/search',
-  LOAD_TICKETS: 'tickets/load',
+  LOAD_SEARCH_ID: 'load/searchId',
+  LOAD_TICKETS: 'load/tickets',
 };
 
-export const ActionCreator = {
-  searchTickets: (searchId) => ({
-    type: ActionType.SEARCH_TICKETS,
-    payload: searchId,
-  }),
-  loadTickets: (tickets) => ({
-    type: ActionType.LOAD_TICKETS,
-    payload: tickets,
-  }),
-};
+export const loadSearchId = createAction(ActionType.LOAD_SEARCH_ID, (searchId) => ({
+  payload: searchId,
+}));
+
+export const loadTickets = createAction(ActionType.LOAD_TICKETS, (tickets) => ({
+  payload: tickets,
+}));

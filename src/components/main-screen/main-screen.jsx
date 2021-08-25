@@ -1,26 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+
+import { useSelector } from 'react-redux';
+import { getTickets } from '../../store/selectors';
 
 import Header from '../header/header';
 import TicketsList from '../tickets-list/tickets-list';
 import ShowMore from '../show-more/show-more';
 import Transitions from '../transitions/transitions';
 import TicketsFilter from '../tickets-filter/tickets-filter';
-import axios from 'axios';
-
-// Картинки компаний:
-// pics.avs.io/99/36/{IATA_CODE_HERE}.png
 
 function MainScreen() {
-  const getSearchId = async () => {
-    return await axios.get('https://front-test.beta.aviasales.ru/search')
-      .then(({data}) => setSearchId(data.searchId))
-  }
-  
-  const [searchId, setSearchId] = useState('');
-  
-  useEffect(() => {
-    setSearchId(getSearchId());
-  }, []);
+  const tickets = useSelector(getTickets);
 
   return(
     <React.Fragment>
@@ -31,7 +21,7 @@ function MainScreen() {
         <section className="main__tickets tickets">
           <TicketsFilter />
 
-          <TicketsList searchId={searchId} />
+          <TicketsList tickets={tickets} />
 
           <ShowMore />
         </section>
